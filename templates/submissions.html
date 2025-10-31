@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Submissions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container fade-in">
+        <h1 class="glow title">📂 All Submitted Assignments</h1>
+
+        {% if records %}
+        <div class="table-wrapper slide-up">
+            <table class="submission-table">
+                <tr>
+                    <th>👤 Name</th>
+                    <th>📚 Subject</th>
+                    <th>🕒 Submitted At</th>
+                    <th>📎 File</th>
+                </tr>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.name }}</td>
+                    <td>{{ record.subject }}</td>
+                    <td>{{ record.timestamp }}</td>
+                    <td><a href="{{ url_for('download_file', filename=record.filename) }}" class="download-link">⬇️ Download</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% else %}
+        <p class="subtitle">No submissions yet 🕓</p>
+        {% endif %}
+
+        <a href="/" class="back-btn">⬅️ Back to Upload</a>
+    </div>
+</body>
+</html>

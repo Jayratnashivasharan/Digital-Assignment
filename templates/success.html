@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container success-page fade-in">
+        <h2 class="success-text bounce">✅ Assignment Submitted Successfully!</h2>
+        <p>Thank you, <b>{{ name }}</b>.</p>
+        <p>Your assignment for <b>{{ subject }}</b> was uploaded successfully!</p>
+        <p><small>📁 File: {{ filename }}</small></p>
+
+        <div class="button-group">
+            <a href="/" class="back-btn">⬅️ Submit Another</a>
+            <a href="/submissions" class="view-btn">📂 View All Submissions</a>
+        </div>
+    </div>
+</body>
+</html>

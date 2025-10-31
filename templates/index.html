@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Submission Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container fade-in">
+        <h1 class="glow title">📘 Digital Assignment Submission</h1>
+        <p class="subtitle">Submit your assignments easily and securely!</p>
+
+        <form action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data" class="upload-form slide-up">
+            <input type="text" name="name" placeholder="Enter your full name" required>
+            <input type="text" name="subject" placeholder="Enter subject name" required>
+            <input type="file" name="file" required>
+            
+            <div class="button-group">
+                <button type="submit" class="submit-btn pulse">🚀 Submit Assignment</button>
+                <button type="button" class="view-btn" onclick="window.location.href='/submissions'">📂 View All Submissions</button>
+            </div>
+        </form>
+
+        <div class="footer">© 2025 Assignment Portal | Designed with 💙 by Honey</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

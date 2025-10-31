@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 40%, #001a33 100%);
+    color: #d0e8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Main container */
+.container {
+    background: rgba(10, 25, 45, 0.92);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 150, 255, 0.6);
+    text-align: center;
+    width: 90%;
+    max-width: 650px;
+    animation: floatIn 1.3s ease;
+}
+
+/* Typography */
+.title {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #99cfff;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.glow {
+    color: #33bbff;
+    text-shadow: 0 0 15px #33bbff, 0 0 40px #0099ff;
+    animation: glowPulse 2s infinite alternate;
+}
+
+/* Form layout */
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.upload-form input {
+    padding: 12px;
+    border: 2px solid #0077cc;
+    border-radius: 8px;
+    background: #0a0a0a;
+    color: #cceeff;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+.upload-form input:focus {
+    border-color: #00ccff;
+    box-shadow: 0 0 10px #00aaff;
+}
+
+/* Button group */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+button, a.back-btn, a.view-btn {
+    background: linear-gradient(135deg, #0077ff, #00ccff);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+button:hover, a.back-btn:hover, a.view-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #00ccff, #33ddff);
+}
+
+.footer {
+    margin-top: 35px;
+    font-size: 0.85em;
+    color: #99d4ff;
+}
+
+/* Success Page */
+.success-text {
+    color: #00ffcc;
+    text-shadow: 0 0 20px #00ffaa;
+    animation: glowPulse 2s infinite alternate;
+}
+
+/* Submissions Table */
+.table-wrapper {
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.submission-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #eaf6ff;
+}
+
+.submission-table th, .submission-table td {
+    border: 1px solid #0099ff;
+    padding: 10px;
+    text-align: center;
+}
+
+.submission-table th {
+    background-color: #003366;
+    color: #aee8ff;
+}
+
+.download-link {
+    color: #66ccff;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes glowPulse {
+    from { text-shadow: 0 0 10px #0077ff; }
+    to { text-shadow: 0 0 25px #00ccff; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.fade-in { animation: fadeIn 1.5s ease; }
+.slide-up { animation: fadeIn 1s ease-in-out; }
+.pulse { animation: glowPulse 2s infinite; }
+.bounce { animation: bounceIn 1.3s ease-in-out; }
+
+@keyframes bounceIn {
+    0% { transform: translateY(-30px); opacity: 0; }
+    50% { transform: translateY(10px); opacity: 1; }
+    100% { transform: translateY(0); }
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .container { padding: 25px; }
+    .submission-table th, .submission-table td { font-size: 0.85em; }
+}
